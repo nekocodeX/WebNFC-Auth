@@ -1,5 +1,7 @@
 <?php
 include "include/config.php";
+$page_title = "Install | WebNFC-Auth";
+include "include/header.php";
 
 // DB構築
 if ($mysqli->query("CREATE TABLE IF NOT EXISTS `users` (
@@ -15,3 +17,5 @@ if ($mysqli->query("CREATE TABLE IF NOT EXISTS `users` (
 }
 
 $mysqli->close();
+
+include "include/footer.php";
