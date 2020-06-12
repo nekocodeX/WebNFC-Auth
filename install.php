@@ -7,7 +7,9 @@ include "include/header.php";
 if ($mysqli->query("CREATE TABLE IF NOT EXISTS `users` (
     `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
     `user_loginid` varchar(20) NOT NULL,
+    `user_mail` varchar(255) NOT NULL,
     `user_sn` varchar(100) NOT NULL,
+    `user_lastlogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
     `user_created` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
     PRIMARY KEY (`user_id`)
 )   DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;")) {
