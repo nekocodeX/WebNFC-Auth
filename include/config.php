@@ -1,9 +1,14 @@
 <?php
-const DB_HOST = "";
-const DB_USER = "";
-const DB_PASSWD = "";
-const DB_NAME = "";
-const G_RECAPTCHA_SITEKEY = "";
+define("DB_HOST","");
+define("DB_USER", "");
+define("DB_PASSWD", "");
+define("DB_NAME", "");
+define("ORIGIN_TRIALS_TOKEN", "");
+define("G_RECAPTCHA_SITEKEY", "");
+
+define("SITE_NAME", "");
+define("LOGO_IMAGE", "");
+
 
 $mysqli = mysqli_connect(DB_HOST, DB_USER, DB_PASSWD, DB_NAME);
 
