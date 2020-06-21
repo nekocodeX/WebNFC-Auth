@@ -5,6 +5,7 @@ define("DB_PASSWD", "");
 define("DB_NAME", "");
 define("ORIGIN_TRIALS_TOKEN", "");
 define("G_RECAPTCHA_SITEKEY", "");
+define("G_RECAPTCHA_SECRETKEY", "");
 
 define("SITE_NAME", "");
 define("LOGO_IMAGE", "");
