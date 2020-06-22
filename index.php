@@ -97,7 +97,7 @@ include "include/header.php";
                 </h2>
                 <div class="ui relaxed divided list">
                     <div class="item">
-                        <i class="big teal user circle outline icon"></i>
+                        <i class="big teal user outline icon"></i>
                         <div class="content">
                             <a class="header">Login ID</a>
                             <div class="description"></div>

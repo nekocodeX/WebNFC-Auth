@@ -23,7 +23,7 @@ include "include/header.php";
                     </div>
                 </div>
                 <div class="field">
-                    <label><i class="useroutline icon"></i>&nbsp;Login ID</label>
+                    <label><i class="user outline icon"></i>&nbsp;Login ID</label>
                     <div class="ui corner labeled input">
                         <input type="text" pattern="^[a-zA-Z0-9_-]{3,15}$" name="user_loginid" placeholder="Login ID" required>
                         <div class="ui corner label">
