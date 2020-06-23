@@ -5,13 +5,13 @@ include "include/header.php";
 ?>
 <div class="ui middle aligned center aligned grid">
     <div class="column" style="text-align: left;">
+        <h2 class="ui teal image header">
+            <img src="<?= LOGO_IMAGE ?>">
+            <div class="content">
+                <?= $page_title ?>
+            </div>
+        </h2>
         <div class="ui segment">
-            <h2 class="ui teal image header">
-                <img src="<?= LOGO_IMAGE ?>">
-                <div class="content">
-                    <?= $page_title ?>
-                </div>
-            </h2>
             <form action="checksignup.php" method="post" class="ui form">
                 <div class="field">
                     <label><i class="envelope outline icon"></i>&nbsp;Mail address</label>
