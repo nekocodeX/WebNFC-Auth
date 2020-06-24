@@ -1,18 +1,81 @@
 <?php
+session_start();
 include "include/config.php";
-TRUE ? $page_title = "Login | " . SITE_NAME : $page_title = "Hello!! | " . SITE_NAME;
+
+$is_login = isset($_SESSION["user_loginid"]);
+$is_login ? $page_title = "UserPage | " . SITE_NAME : $page_title = "Login | " . SITE_NAME;
 include "include/header.php";
+
+$result = $mysqli->query("SELECT * FROM `users` WHERE `user_loginid`='" . $_SESSION["user_loginid"] . "';");
+while ($row = $result->fetch_assoc()) {
+    $user_loginid = $row["user_loginid"];
+    $user_mail = $row["user_mail"];
+    $user_lastlogin = $row["user_lastlogin"];
+    $user_lastlogin_failure = $row["user_lastlogin_failure"];
+    $user_created = $row["user_created"];
+}
+if ($user_lastlogin === "0000-00-00 00:00:00") $user_lastlogin = "(記録なし)";
+if ($user_lastlogin_failure === "0000-00-00 00:00:00") $user_lastlogin_failure = "(記録なし)";
+if ($user_created === "0000-00-00 00:00:00") $user_created = "(記録なし)";
 ?>
-<?php if (TRUE) : ?>
+<?php if ($is_login) : ?>
     <div class="ui middle aligned center aligned grid">
         <div class="column" style="text-align: left;">
+            <h2 class="ui teal image header">
+                <img src="<?= LOGO_IMAGE ?>" class="image">
+                <div class="content">
+                    <?= $page_title ?>
+                </div>
+            </h2>
             <div class="ui segment">
-                <h2 class="ui teal image header">
-                    <img src="<?= LOGO_IMAGE ?>">
-                    <div class="content">
-                        <?= $page_title ?>
-                    </div>
+                <h2 class="ui center aligned icon header">
+                    <i class="circular users icon"></i>
+                    <p><?= $user_loginid ?></p>
                 </h2>
+                <div class="ui relaxed divided list">
+                    <div class="item">
+                        <i class="big teal envelope outline icon"></i>
+                        <div class="content">
+                            <a class="header">Mail address</a>
+                            <div class="description"><?= $user_mail ?></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="big teal calendar alternate outline icon"></i>
+                        <div class="content">
+                            <a class="header">最終ログイン日時</a>
+                            <div class="description"><?= $user_lastlogin ?></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="big teal calendar times outline icon"></i>
+                        <div class="content">
+                            <a class="header">最終ログイン失敗日時</a>
+                            <div class="description"><?= $user_lastlogin_failure ?></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="big teal history icon"></i>
+                        <div class="content">
+                            <a class="header">登録日時</a>
+                            <div class="description"><?= $user_created ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="logout.php" class="ui fluid large button">ログアウト</a>
+        </div>
+    </div>
+<?php else : ?>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column" style="text-align: left;">
+            <h2 class="ui teal image header">
+                <img src="<?= LOGO_IMAGE ?>" class="image">
+                <div class="content">
+                    <?= $page_title ?>
+                </div>
+            </h2>
+            <div class="ui segment">
                 <form action="checklogin.php" method="post" class="ui form">
                     <div class="field">
                         <label><i class="user outline icon"></i>&nbsp;Login ID</label>
@@ -26,7 +89,7 @@ include "include/header.php";
                     <div class="field">
                         <label><i class="id card outline icon"></i>&nbsp;NFC SerialNumber</label>
                         <div class="ui corner labeled input">
-                            <input type="password" pattern="^[a-fA-F0-9]{2}(:[a-fA-F0-9]{2})+$" name="user_sn" id="get_nfc_sn" placeholder="[読み取り開始] を押してNFCを端末にかざしてください"" tabindex=" -1" readonly-mod required>
+                            <input type="password" pattern="^[a-fA-F0-9]{2}(:[a-fA-F0-9]{2})+$" name="user_sn" id="get_nfc_sn" placeholder="[読み取り開始] を押してNFCを端末にかざしてください" tabindex=" -1" readonly-mod required>
                             <div class="ui corner label">
                                 <i class="red asterisk icon"></i>
                             </div>
@@ -85,56 +148,6 @@ include "include/header.php";
             }
         })
     </script>
-<?php else : ?>
-    <div class="ui middle aligned center aligned grid">
-        <div class="column" style="text-align: left;">
-            <div class="ui segment">
-                <h2 class="ui teal image header">
-                    <img src="<?= LOGO_IMAGE ?>">
-                    <div class="content">
-                        <?= $page_title ?>
-                    </div>
-                </h2>
-                <div class="ui relaxed divided list">
-                    <div class="item">
-                        <i class="big teal user outline icon"></i>
-                        <div class="content">
-                            <a class="header">Login ID</a>
-                            <div class="description"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <i class="big teal envelope outline icon"></i>
-                        <div class="content">
-                            <a class="header">Mail address</a>
-                            <div class="description"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <i class="big teal calendar alternate outline icon"></i>
-                        <div class="content">
-                            <a class="header">最終ログイン日時</a>
-                            <div class="description"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <i class="big teal calendar times outline icon"></i>
-                        <div class="content">
-                            <a class="header">最終ログイン失敗日時</a>
-                            <div class="description"></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <i class="big teal history icon"></i>
-                        <div class="content">
-                            <a class="header">登録日時</a>
-                            <div class="description"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 <?php endif; ?>
 
 
