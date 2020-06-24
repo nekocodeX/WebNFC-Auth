@@ -59,9 +59,9 @@ if (isset($error)) {
     echo "<div class=\"ui icon negative message\"><i class=\"times circle outline icon\"></i><div class=\"content\"><div class=\"header\">";
     foreach ($error as $temp) echo "[ERROR] " . $temp . "<br>";
     echo "</div><p>";
-    echo 3 + count($error) . "秒後に戻ります…。";
+    echo 2 + count($error) . "秒後に戻ります…。";
     echo "</p></div></div>";
-    echo "<script>setTimeout(function(){window.location=\"signup.php\"}, " . (3 + count($error)) . "*1000)</script>";
+    echo "<script>setTimeout(function(){window.location=\"signup.php\"}, " . (2 + count($error)) . "*1000)</script>";
 }
 ?>
 

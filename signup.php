@@ -6,7 +6,7 @@ include "include/header.php";
 <div class="ui middle aligned center aligned grid">
     <div class="column" style="text-align: left;">
         <h2 class="ui teal image header">
-            <img src="<?= LOGO_IMAGE ?>">
+            <img src="<?= LOGO_IMAGE ?>" class="image">
             <div class="content">
                 <?= $page_title ?>
             </div>
@@ -56,6 +56,10 @@ include "include/header.php";
                 <button type="submit" class="ui fluid large teal button">登録</button>
         </div>
         </form>
+        <div class="ui message" style="text-align: center;">
+            アカウントをお持ちの場合:&nbsp;
+            <a href="index.php">Login</a>
+        </div>
     </div>
 </div>
 <script>
