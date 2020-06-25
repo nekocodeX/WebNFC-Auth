@@ -36,28 +36,28 @@ if ($user_created === "0000-00-00 00:00:00") $user_created = "(記録なし)";
                     <div class="item">
                         <i class="big teal envelope outline icon"></i>
                         <div class="content">
-                            <a class="header">Mail address</a>
+                            <div class="header">Mail address</div>
                             <div class="description"><?= $user_mail ?></div>
                         </div>
                     </div>
                     <div class="item">
                         <i class="big teal calendar alternate outline icon"></i>
                         <div class="content">
-                            <a class="header">最終ログイン日時</a>
+                            <div class="header">最終ログイン日時</div>
                             <div class="description"><?= $user_lastlogin ?></div>
                         </div>
                     </div>
                     <div class="item">
                         <i class="big teal calendar times outline icon"></i>
                         <div class="content">
-                            <a class="header">最終ログイン失敗日時</a>
+                            <div class="header">最終ログイン失敗日時</div>
                             <div class="description"><?= $user_lastlogin_failure ?></div>
                         </div>
                     </div>
                     <div class="item">
                         <i class="big teal history icon"></i>
                         <div class="content">
-                            <a class="header">登録日時</a>
+                            <div class="header">登録日時</div>
                             <div class="description"><?= $user_created ?></div>
                         </div>
                     </div>
