@@ -7,9 +7,9 @@ define("ORIGIN_TRIALS_TOKEN", "");
 define("G_RECAPTCHA_SITEKEY", "");
 define("G_RECAPTCHA_SECRETKEY", "");
 
-define("SITE_NAME", "");
-define("LOGO_IMAGE", "");
-define("FAVICON_IMAGE", "");
+define("SITE_NAME", "WebNFC-Auth");
+define("LOGO_IMAGE", "asset/image/logo.png");
+define("FAVICON_IMAGE", "asset/image/favicon.ico");
 
 
 $mysqli = mysqli_connect(DB_HOST, DB_USER, DB_PASSWD, DB_NAME);
