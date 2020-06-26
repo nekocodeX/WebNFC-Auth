@@ -6,7 +6,7 @@ include "include/header.php";
 // DB構築
 if ($mysqli->query("CREATE TABLE IF NOT EXISTS `users` (
     `user_id` int(11) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `user_loginid` varchar(20) NOT NULL UNIQUE,
+    `user_loginid` varchar(20) BINARY NOT NULL UNIQUE,
     `user_mail` varchar(255) NOT NULL UNIQUE,
     `user_sn` varchar(60) NOT NULL,
     `user_lastlogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
