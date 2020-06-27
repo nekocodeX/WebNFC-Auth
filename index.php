@@ -63,7 +63,15 @@ if ($user_created === "0000-00-00 00:00:00") $user_created = "(記録なし)";
                     </div>
                 </div>
             </div>
-            <a href="logout.php" class="ui fluid large button">ログアウト</a>
+            <div style="margin-bottom: 1em;">
+                <a href="logout.php" class="ui fluid large button">ログアウト</a>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://github.com/nekocodeX/WebNFC-Auth" target="_blank" class="ui labeled icon button">
+                    <i class="github icon"></i>
+                    GitHub Repo
+                </a>
+            </div>
         </div>
     </div>
 <?php else : ?>
@@ -106,6 +114,12 @@ if ($user_created === "0000-00-00 00:00:00") $user_created = "(記録なし)";
             <div class="ui message" style="text-align: center;">
                 アカウントをお持ちでない場合:&nbsp;
                 <a href="signup.php">Signup</a>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://github.com/nekocodeX/WebNFC-Auth" target="_blank" class="ui labeled icon button">
+                    <i class="github icon"></i>
+                    GitHub Repo
+                </a>
             </div>
         </div>
     </div>

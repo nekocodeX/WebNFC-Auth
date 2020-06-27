@@ -60,6 +60,12 @@ include "include/header.php";
             アカウントをお持ちの場合:&nbsp;
             <a href="index.php">Login</a>
         </div>
+        <div style="text-align: center;">
+            <a href="https://github.com/nekocodeX/WebNFC-Auth" target="_blank" class="ui labeled icon button">
+                <i class="github icon"></i>
+                GitHub Repo
+            </a>
+        </div>
     </div>
 </div>
 <script>
