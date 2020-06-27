@@ -21,11 +21,11 @@ Web NFC API を用いたパスワードレスな認証システムのような�
 -   Android 版 Chrome 81 以降
 -   NFC 搭載端末
 
-### 🏷NFC
+### 🏷 NFC
 
 -   ブランクカードが必要？（交通系 IC 等では動作確認できず）
 
-## 👀Demo
+## 👀 Demo
 
 <div align="center">
 
