@@ -65,6 +65,7 @@ include "include/header.php";
                 <i class="github icon"></i>
                 GitHub Repo
             </a>
+            <p class="ver"><?= VERSION ?></p>
         </div>
     </div>
 </div>

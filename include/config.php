@@ -1,5 +1,5 @@
 <?php
-define("DB_HOST","");
+define("DB_HOST", "");
 define("DB_USER", "");
 define("DB_PASSWD", "");
 define("DB_NAME", "");
@@ -10,6 +10,7 @@ define("G_RECAPTCHA_SECRETKEY", "");
 define("SITE_NAME", "WebNFC-Auth");
 define("LOGO_IMAGE", "asset/image/logo.png");
 define("FAVICON_IMAGE", "asset/image/favicon.ico");
+define("VERSION", "v0.0.0");
 
 
 $mysqli = mysqli_connect(DB_HOST, DB_USER, DB_PASSWD, DB_NAME);

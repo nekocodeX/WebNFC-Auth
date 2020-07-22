@@ -71,6 +71,7 @@ if ($user_created === "0000-00-00 00:00:00") $user_created = "(記録なし)";
                     <i class="github icon"></i>
                     GitHub Repo
                 </a>
+                <p class="ver"><?= VERSION ?></p>
             </div>
         </div>
     </div>
@@ -120,6 +121,7 @@ if ($user_created === "0000-00-00 00:00:00") $user_created = "(記録なし)";
                     <i class="github icon"></i>
                     GitHub Repo
                 </a>
+                <p class="ver"><?= VERSION ?></p>
             </div>
         </div>
     </div>
